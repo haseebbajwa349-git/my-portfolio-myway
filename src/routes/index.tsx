@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import haseebPhoto from "@/assets/haseeb.jpg.asset.json";
-import { AnimatedSection, StaggerContainer, StaggerItem, scaleIn } from "@/components/animations";
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animations";
 
 export const Route = createFileRoute("/")({
   head: () => ({
