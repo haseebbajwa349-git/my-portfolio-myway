@@ -208,8 +208,8 @@ function Portfolio() {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
               <Button size="lg" asChild>
-                <a href="mailto:hseebbajwa349@gmail.com">
-                  <Mail className="size-4" /> hseebbajwa349@gmail.com
+                <a href="mailto:haseebbajwa349@gmail.com">
+                  <Mail className="size-4" /> haseebbajwa349@gmail.com
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
