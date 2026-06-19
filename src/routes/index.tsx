@@ -218,7 +218,7 @@ function Portfolio() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="https://www.linkedin.com/in/haseeb-bajwa-69b748361/" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact_info%3BCVK5sB7VQcSV7vgh4TzgEQ%3D%3D" target="_blank" rel="noreferrer">
                   <Linkedin className="size-4" /> LinkedIn
                 </a>
               </Button>
