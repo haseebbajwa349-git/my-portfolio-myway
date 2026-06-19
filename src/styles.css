@@ -135,10 +135,11 @@
 .bg-cosmic {
   background-color: var(--background);
   background-image:
-    radial-gradient(at 20% 10%, color-mix(in oklab, var(--primary) 25%, transparent) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, color-mix(in oklab, var(--accent) 22%, transparent) 0px, transparent 50%),
-    radial-gradient(at 70% 90%, color-mix(in oklab, var(--primary) 18%, transparent) 0px, transparent 50%),
-    radial-gradient(at 0% 80%, color-mix(in oklab, var(--accent) 18%, transparent) 0px, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 20% 20%, color-mix(in oklab, var(--primary) 30%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 10%, color-mix(in oklab, var(--accent) 25%, transparent) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 60% 85%, color-mix(in oklab, var(--primary) 22%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 10% 80%, color-mix(in oklab, var(--accent) 20%, transparent) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, color-mix(in oklab, var(--primary) 10%, transparent) 0%, transparent 50%);
 }
 
 .text-gradient {
@@ -146,6 +147,13 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--foreground) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 4%, transparent) 1px, transparent 1px);
 }
 
 @layer base {
