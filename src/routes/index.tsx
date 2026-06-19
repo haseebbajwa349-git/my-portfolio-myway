@@ -178,18 +178,26 @@ function Portfolio() {
       {/* About / Skills */}
       <section id="about" className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">About me</h2>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            I'm a fullstack developer who enjoys turning ideas into working products.
-            I work across the stack — designing data models, building APIs, and crafting
-            interfaces that feel fast and responsive. Right now I'm going deeper into
-            the skills below.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-2">
+          <AnimatedSection>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">About me</h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              I'm a fullstack developer who enjoys turning ideas into working products.
+              I work across the stack — designing data models, building APIs, and crafting
+              interfaces that feel fast and responsive. Right now I'm going deeper into
+              the skills below.
+            </p>
+          </AnimatedSection>
+          <StaggerContainer className="mt-8 flex flex-wrap gap-2">
             {skills.map((s) => (
-              <Badge key={s} variant="outline" className="border-border/70 bg-card/40 px-3 py-1 text-sm backdrop-blur-sm">{s}</Badge>
+              <StaggerItem key={s}>
+                <motion.div whileHover={{ scale: 1.08 }} transition={{ type: "spring", stiffness: 400 }}>
+                  <Badge variant="outline" className="border-border/70 bg-card/40 px-3 py-1 text-sm backdrop-blur-sm">{s}</Badge>
+                </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
