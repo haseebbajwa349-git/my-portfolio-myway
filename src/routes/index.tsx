@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail, Moon, Sun, Code2, ExternalLink, Sparkles, Layer
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import haseebPhoto from "@/assets/haseeb.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -86,27 +87,41 @@ function Portfolio() {
 
       {/* Hero */}
       <section className="relative mx-auto max-w-6xl px-6 py-24 sm:py-36">
-        <Badge variant="secondary" className="mb-6 gap-1.5">
-          <Sparkles className="size-3" /> Available for work
-        </Badge>
-        <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
-          Hi, I'm <span className="text-gradient">Haseeb Hussain</span>
-        </h1>
-        <p className="mt-4 text-xl text-muted-foreground sm:text-2xl">
-          Fullstack Developer crafting real-time, modern web apps.
-        </p>
-        <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          I build end-to-end web applications with a focus on real-time features and clean,
-          intuitive interfaces. Currently going deeper into modern fullstack skills —
-          sharpening my React, Node.js, and system design.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Button asChild size="lg">
-            <a href="#projects">View Projects</a>
-          </Button>
-          <Button variant="outline" size="lg" asChild>
-            <a href="#contact">Get in Touch</a>
-          </Button>
+        <div className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
+          <div>
+            <Badge variant="secondary" className="mb-6 gap-1.5">
+              <Sparkles className="size-3" /> Available for work
+            </Badge>
+            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+              Hi, I'm <span className="text-gradient">Haseeb Hussain</span>
+            </h1>
+            <p className="mt-4 text-xl text-muted-foreground sm:text-2xl">
+              Fullstack Developer crafting real-time, modern web apps.
+            </p>
+            <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              I build end-to-end web applications with a focus on real-time features and clean,
+              intuitive interfaces. Currently going deeper into modern fullstack skills —
+              sharpening my React, Node.js, and system design.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Button asChild size="lg">
+                <a href="#projects">View Projects</a>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a href="#contact">Get in Touch</a>
+              </Button>
+            </div>
+          </div>
+          <div className="relative mx-auto md:mx-0">
+            <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/40 to-accent/40 blur-2xl" />
+            <div className="relative size-56 overflow-hidden rounded-full border-4 border-border/60 shadow-2xl sm:size-72">
+              <img
+                src={haseebPhoto.url}
+                alt="Haseeb Hussain portrait"
+                className="size-full object-cover"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Stats */}
