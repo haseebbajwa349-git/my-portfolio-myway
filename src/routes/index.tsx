@@ -114,8 +114,17 @@ function Portfolio() {
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto md:mx-0">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/40 to-accent/40 blur-2xl" />
+          <motion.div
+            className="relative mx-auto md:mx-0"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          >
+            <motion.div
+              className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/40 to-accent/40 blur-2xl"
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+            />
             <div className="relative w-56 overflow-hidden rounded-3xl border-4 border-border/60 shadow-2xl sm:w-72">
               <img
                 src={haseebPhoto.url}
@@ -123,7 +132,7 @@ function Portfolio() {
                 className="w-full h-auto"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Stats */}
