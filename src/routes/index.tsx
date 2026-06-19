@@ -118,7 +118,7 @@ function Portfolio() {
               <img
                 src={haseebPhoto.url}
                 alt="Haseeb Hussain portrait"
-                className="size-full object-cover"
+                className="size-full object-cover object-[center_top]"
               />
             </div>
           </div>
