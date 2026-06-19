@@ -90,30 +90,55 @@ function Portfolio() {
       {/* Hero */}
       <section className="relative mx-auto max-w-6xl px-6 py-24 sm:py-36">
         <div className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
-          <div>
-            <Badge variant="secondary" className="mb-6 gap-1.5">
-              <Sparkles className="size-3" /> Available for work
-            </Badge>
-            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+            }}
+          >
+            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+              <Badge variant="secondary" className="mb-6 gap-1.5">
+                <Sparkles className="size-3" /> Available for work
+              </Badge>
+            </motion.div>
+            <motion.h1
+              className="text-5xl font-bold tracking-tight sm:text-7xl"
+              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+            >
               Hi, I'm <span className="text-gradient">Haseeb Hussain</span>
-            </h1>
-            <p className="mt-4 text-xl text-muted-foreground sm:text-2xl">
+            </motion.h1>
+            <motion.p
+              className="mt-4 text-xl text-muted-foreground sm:text-2xl"
+              variants={{ hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            >
               Fullstack Developer crafting real-time, modern web apps.
-            </p>
-            <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            </motion.p>
+            <motion.p
+              className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+              variants={{ hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            >
               I build end-to-end web applications with a focus on real-time features and clean,
               intuitive interfaces. Currently going deeper into modern fullstack skills —
               sharpening my React, Node.js, and system design.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Button asChild size="lg">
-                <a href="#projects">View Projects</a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="#contact">Get in Touch</a>
-              </Button>
-            </div>
-          </div>
+            </motion.p>
+            <motion.div
+              className="mt-10 flex flex-wrap gap-3"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+                <Button asChild size="lg">
+                  <a href="#projects">View Projects</a>
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+                <Button variant="outline" size="lg" asChild>
+                  <a href="#contact">Get in Touch</a>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </motion.div>
           <motion.div
             className="relative mx-auto md:mx-0"
             initial={{ opacity: 0, scale: 0.9 }}
