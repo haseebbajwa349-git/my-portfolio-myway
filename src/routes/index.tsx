@@ -161,14 +161,18 @@ function Portfolio() {
         </div>
 
         {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <StaggerContainer className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {stats.map((s) => (
-            <Card key={s.label} className="border-border/60 bg-card/40 p-5 backdrop-blur-sm">
-              <div className="text-3xl font-bold text-gradient">{s.value}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
-            </Card>
+            <StaggerItem key={s.label}>
+              <motion.div whileHover={{ scale: 1.05, y: -4 }} transition={{ type: "spring", stiffness: 300 }}>
+                <Card className="border-border/60 bg-card/40 p-5 backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-gradient">{s.value}</div>
+                  <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
+                </Card>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </section>
 
       {/* About / Skills */}
