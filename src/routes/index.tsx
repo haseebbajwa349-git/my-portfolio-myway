@@ -204,19 +204,27 @@ function Portfolio() {
       {/* Services */}
       <section id="services" className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">What I do</h2>
-          <p className="mt-3 text-muted-foreground">Things I help teams and clients build.</p>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <AnimatedSection>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">What I do</h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <p className="mt-3 text-muted-foreground">Things I help teams and clients build.</p>
+          </AnimatedSection>
+          <StaggerContainer className="mt-10 grid gap-6 md:grid-cols-3">
             {services.map((s) => (
-              <Card key={s.title} className="group border-border/60 bg-card/40 p-6 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-primary/40">
-                <div className="inline-flex size-11 items-center justify-center rounded-lg bg-primary/15 text-primary">
-                  <s.icon className="size-5" />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-              </Card>
+              <StaggerItem key={s.title}>
+                <motion.div whileHover={{ scale: 1.03, y: -6 }} transition={{ type: "spring", stiffness: 300 }}>
+                  <Card className="group border-border/60 bg-card/40 p-6 backdrop-blur-sm transition-all hover:border-primary/40">
+                    <div className="inline-flex size-11 items-center justify-center rounded-lg bg-primary/15 text-primary">
+                      <s.icon className="size-5" />
+                    </div>
+                    <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                  </Card>
+                </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
