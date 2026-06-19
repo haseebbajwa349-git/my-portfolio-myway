@@ -231,24 +231,32 @@ function Portfolio() {
       {/* Projects */}
       <section id="projects" className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Projects</h2>
-          <p className="mt-3 text-muted-foreground">Selected work I've built recently.</p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <AnimatedSection>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Projects</h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <p className="mt-3 text-muted-foreground">Selected work I've built recently.</p>
+          </AnimatedSection>
+          <StaggerContainer className="mt-10 grid gap-6 sm:grid-cols-2">
             {projects.map((p) => (
-              <Card key={p.title} className="group border-border/60 bg-card/40 p-6 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl font-semibold">{p.title}</h3>
-                  <ExternalLink className="size-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
-                    <Badge key={t} variant="secondary" className="text-xs">{t}</Badge>
-                  ))}
-                </div>
-              </Card>
+              <StaggerItem key={p.title}>
+                <motion.div whileHover={{ scale: 1.02, y: -6 }} transition={{ type: "spring", stiffness: 300 }}>
+                  <Card className="group border-border/60 bg-card/40 p-6 backdrop-blur-sm transition-all hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="text-xl font-semibold">{p.title}</h3>
+                      <ExternalLink className="size-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {p.tags.map((t) => (
+                        <Badge key={t} variant="secondary" className="text-xs">{t}</Badge>
+                      ))}
+                    </div>
+                  </Card>
+                </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
