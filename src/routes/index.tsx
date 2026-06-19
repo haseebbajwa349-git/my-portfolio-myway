@@ -59,7 +59,7 @@ function Portfolio() {
   }, [theme]);
 
   return (
-    <div className="bg-cosmic min-h-screen text-foreground">
+    <div className="bg-cosmic bg-grid min-h-screen text-foreground">
       {/* Nav */}
       <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
