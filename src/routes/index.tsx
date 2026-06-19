@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Moon, Sun, Code2, ExternalLink, Sparkles, Layers, Server, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import haseebPhoto from "@/assets/haseeb.jpg.asset.json";
+import { AnimatedSection, StaggerContainer, StaggerItem, scaleIn } from "@/components/animations";
 
 export const Route = createFileRoute("/")({
   head: () => ({
