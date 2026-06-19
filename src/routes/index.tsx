@@ -263,31 +263,45 @@ function Portfolio() {
       {/* Contact */}
       <section id="contact" className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <div className="mx-auto max-w-3xl text-center">
+          <AnimatedSection className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
               Let's <span className="text-gradient">build something</span> together
             </h2>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1} className="mx-auto max-w-3xl text-center">
             <p className="mt-4 text-muted-foreground sm:text-lg">
               Have a project in mind or just want to say hi? My inbox is open.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-              <Button size="lg" asChild>
-                <a href="mailto:haseebbajwa349@gmail.com">
-                  <Mail className="size-4" /> haseebbajwa349@gmail.com
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="https://github.com/haseebbajwa349-git" target="_blank" rel="noreferrer">
-                  <Github className="size-4" /> GitHub
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact_info%3BCVK5sB7VQcSV7vgh4TzgEQ%3D%3D" target="_blank" rel="noreferrer">
-                  <Linkedin className="size-4" /> LinkedIn
-                </a>
-              </Button>
-            </div>
-          </div>
+          </AnimatedSection>
+          <StaggerContainer className="mx-auto mt-10 flex max-w-3xl flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <StaggerItem>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+                <Button size="lg" asChild>
+                  <a href="mailto:haseebbajwa349@gmail.com">
+                    <Mail className="size-4" /> haseebbajwa349@gmail.com
+                  </a>
+                </Button>
+              </motion.div>
+            </StaggerItem>
+            <StaggerItem>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+                <Button variant="outline" size="lg" asChild>
+                  <a href="https://github.com/haseebbajwa349-git" target="_blank" rel="noreferrer">
+                    <Github className="size-4" /> GitHub
+                  </a>
+                </Button>
+              </motion.div>
+            </StaggerItem>
+            <StaggerItem>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+                <Button variant="outline" size="lg" asChild>
+                  <a href="https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact_info%3BCVK5sB7VQcSV7vgh4TzgEQ%3D%3D" target="_blank" rel="noreferrer">
+                    <Linkedin className="size-4" /> LinkedIn
+                  </a>
+                </Button>
+              </motion.div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
