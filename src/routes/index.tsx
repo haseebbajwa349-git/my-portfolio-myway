@@ -113,12 +113,12 @@ function Portfolio() {
             </div>
           </div>
           <div className="relative mx-auto md:mx-0">
-            <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/40 to-accent/40 blur-2xl" />
-            <div className="relative size-56 overflow-hidden rounded-full border-4 border-border/60 shadow-2xl sm:size-72">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/40 to-accent/40 blur-2xl" />
+            <div className="relative size-56 overflow-hidden rounded-3xl border-4 border-border/60 shadow-2xl sm:size-72">
               <img
                 src={haseebPhoto.url}
                 alt="Haseeb Hussain portrait"
-                className="size-full object-cover"
+                className="size-full object-contain"
               />
             </div>
           </div>
