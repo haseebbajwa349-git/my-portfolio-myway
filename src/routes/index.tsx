@@ -88,7 +88,7 @@ function Portfolio() {
       </header>
 
       {/* Hero */}
-      <AnimatedSection className="relative mx-auto max-w-6xl px-6 py-24 sm:py-36">
+      <section className="relative mx-auto max-w-6xl px-6 py-24 sm:py-36">
         <div className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
           <div>
             <Badge variant="secondary" className="mb-6 gap-1.5">
