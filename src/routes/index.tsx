@@ -272,7 +272,7 @@ function Portfolio() {
             <span className="inline-flex size-7 items-center justify-center rounded-md bg-primary/15 text-primary ring-1 ring-primary/30">
               <Code2 className="size-4" />
             </span>
-            <span>Haseeb.dev</span>
+            <span>Haseeb H.</span>
           </div>
           <nav className="hidden gap-8 text-sm text-muted-foreground sm:flex">
             <a href="#about" className="transition-colors hover:text-foreground">About</a>
