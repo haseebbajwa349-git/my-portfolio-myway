@@ -54,10 +54,7 @@ const skillsMarquee = [
   "NODE.JS",
   "NEXT.JS",
   "GITHUB",
-  " ",
   "TAILWIND",
-  " ",
-  " ",
   "GIT",
 ];
 
