@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   motion,
+  AnimatePresence,
   useScroll,
   useTransform,
   useSpring,
@@ -22,6 +23,8 @@ import {
   Server,
   Rocket,
   MapPin,
+  Menu,
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -208,6 +211,7 @@ function ProjectCard({
 
 function Portfolio() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [mobileOpen, setMobileOpen] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
 
@@ -280,15 +284,44 @@ function Portfolio() {
             <a href="#projects" className="transition-colors hover:text-foreground">Work</a>
             <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
           </nav>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
-          </Button>
+          <div className="flex items-center gap-1">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileOpen((o) => !o)}
+              aria-label="Toggle menu"
+              className="sm:hidden"
+            >
+              {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            </Button>
+          </div>
         </div>
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.nav
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="overflow-hidden border-t border-white/5 sm:hidden"
+            >
+              <div className="flex flex-col gap-4 px-6 py-6 text-sm text-muted-foreground">
+                <a href="#about" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">About</a>
+                <a href="#services" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">Services</a>
+                <a href="#projects" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">Work</a>
+                <a href="#contact" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">Contact</a>
+              </div>
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Hero */}
