@@ -315,17 +315,17 @@ function Portfolio() {
         <AnimatePresence>
           {mobileOpen && (
             <motion.nav
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="overflow-hidden border-t border-white/5 sm:hidden"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute left-0 right-0 top-full z-40 border-b border-white/5 bg-background/95 backdrop-blur-xl sm:hidden"
             >
               <div className="flex flex-col gap-4 px-6 py-6 text-sm text-muted-foreground">
-                <a href="#about" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("about"); }} className="transition-colors hover:text-foreground">About</a>
-                <a href="#services" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("services"); }} className="transition-colors hover:text-foreground">Services</a>
-                <a href="#projects" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("projects"); }} className="transition-colors hover:text-foreground">Work</a>
-                <a href="#contact" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("contact"); }} className="transition-colors hover:text-foreground">Contact</a>
+                <a href="#about" onClick={(e) => { e.preventDefault(); setMobileOpen(false); setTimeout(() => scrollToSection("about"), 50); }} className="transition-colors hover:text-foreground">About</a>
+                <a href="#services" onClick={(e) => { e.preventDefault(); setMobileOpen(false); setTimeout(() => scrollToSection("services"), 50); }} className="transition-colors hover:text-foreground">Services</a>
+                <a href="#projects" onClick={(e) => { e.preventDefault(); setMobileOpen(false); setTimeout(() => scrollToSection("projects"), 50); }} className="transition-colors hover:text-foreground">Work</a>
+                <a href="#contact" onClick={(e) => { e.preventDefault(); setMobileOpen(false); setTimeout(() => scrollToSection("contact"), 50); }} className="transition-colors hover:text-foreground">Contact</a>
               </div>
             </motion.nav>
           )}
