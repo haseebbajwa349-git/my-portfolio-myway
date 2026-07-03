@@ -53,11 +53,11 @@ const skillsMarquee = [
   "REACT",
   "NODE.JS",
   "NEXT.JS",
-  "POSTGRES",
-  "WEBSOCKETS",
+  "GITHUB",
+  " ",
   "TAILWIND",
-  "TANSTACK",
-  "REST APIS",
+  " ",
+  " ",
   "GIT",
 ];
 
