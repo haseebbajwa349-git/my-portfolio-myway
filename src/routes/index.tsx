@@ -469,8 +469,44 @@ function Portfolio() {
         </div>
       </section>
 
+      {/* About */}
+      <section id="about" className="border-b border-white/5">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12">
+          <Reveal>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.28em] text-primary">
+              01 — About
+            </p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
+              Who I <span className="text-gradient">am</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              I'm <span className="text-foreground font-medium">Haseeb Hussain</span>, a fullstack developer who loves building real-time, interactive web applications. I design, develop and ship end-to-end products with a strong eye for detail and performance. Currently going deeper into advanced system design, real-time architectures and modern frontend tooling.
+            </p>
+          </Reveal>
+
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { label: "Frontend", items: "React, TypeScript, Tailwind CSS, Next.js" },
+              { label: "Backend", items: "Node.js, PostgreSQL, REST APIs, WebSockets" },
+              { label: "Tools", items: "Git, TanStack, Vite, Figma" },
+            ].map((block, i) => (
+              <Reveal key={block.label} delay={0.1 * i}>
+                <div className="glass-card rounded-2xl p-6">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary mb-3">{block.label}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{block.items}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Skills Marquee */}
-      <div id="about" className="relative overflow-hidden border-y border-white/5 bg-white/[0.02] py-10">
+      <div className="relative overflow-hidden border-y border-white/5 bg-white/[0.02] py-10">
         <div className="flex w-max animate-marquee gap-16 whitespace-nowrap pr-16">
           {[...skillsMarquee, ...skillsMarquee].map((s, i) => (
             <span
