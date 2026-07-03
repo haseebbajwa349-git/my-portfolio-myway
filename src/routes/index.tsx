@@ -322,10 +322,10 @@ function Portfolio() {
               className="overflow-hidden border-t border-white/5 sm:hidden"
             >
               <div className="flex flex-col gap-4 px-6 py-6 text-sm text-muted-foreground">
-                <a href="#about" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">About</a>
-                <a href="#services" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">Services</a>
-                <a href="#projects" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">Work</a>
-                <a href="#contact" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">Contact</a>
+                <a href="#about" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("about"); }} className="transition-colors hover:text-foreground">About</a>
+                <a href="#services" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("services"); }} className="transition-colors hover:text-foreground">Services</a>
+                <a href="#projects" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("projects"); }} className="transition-colors hover:text-foreground">Work</a>
+                <a href="#contact" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("contact"); }} className="transition-colors hover:text-foreground">Contact</a>
               </div>
             </motion.nav>
           )}
