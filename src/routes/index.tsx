@@ -241,6 +241,14 @@ function Portfolio() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  function scrollToSection(id: string) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const headerOffset = 80;
+    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+
   function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
@@ -279,10 +287,10 @@ function Portfolio() {
             <span>Haseeb H.</span>
           </div>
           <nav className="hidden gap-8 text-sm text-muted-foreground sm:flex">
-            <a href="#about" className="transition-colors hover:text-foreground">About</a>
-            <a href="#services" className="transition-colors hover:text-foreground">Services</a>
-            <a href="#projects" className="transition-colors hover:text-foreground">Work</a>
-            <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
+            <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("about"); }} className="transition-colors hover:text-foreground">About</a>
+            <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection("services"); }} className="transition-colors hover:text-foreground">Services</a>
+            <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection("projects"); }} className="transition-colors hover:text-foreground">Work</a>
+            <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }} className="transition-colors hover:text-foreground">Contact</a>
           </nav>
           <div className="flex items-center gap-1">
             <Button
@@ -314,10 +322,10 @@ function Portfolio() {
               className="overflow-hidden border-t border-white/5 sm:hidden"
             >
               <div className="flex flex-col gap-4 px-6 py-6 text-sm text-muted-foreground">
-                <a href="#about" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">About</a>
-                <a href="#services" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">Services</a>
-                <a href="#projects" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">Work</a>
-                <a href="#contact" onClick={() => setMobileOpen(false)} className="transition-colors hover:text-foreground">Contact</a>
+                <a href="#about" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("about"); }} className="transition-colors hover:text-foreground">About</a>
+                <a href="#services" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("services"); }} className="transition-colors hover:text-foreground">Services</a>
+                <a href="#projects" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("projects"); }} className="transition-colors hover:text-foreground">Work</a>
+                <a href="#contact" onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollToSection("contact"); }} className="transition-colors hover:text-foreground">Contact</a>
               </div>
             </motion.nav>
           )}
